@@ -1554,10 +1554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04b331a7c06d9c4da9d1e00a5da0b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioFiles:
-  - name: 
-    volume: 0
-    audioClip: {fileID: 0}
+  backgroundMusicFiles:
+  - name: SatuMalaysia
+    volume: 1
+    audioClip: {fileID: 8300000, guid: d5f28d3161b49f94098aa7a9cee52601, type: 3}
+  narrationFiles: []
+  soundEffectsFiles: []
+  voiceEffectsFiles: []
   backgroundMusicSource: {fileID: 1319834177}
   narrationSource: {fileID: 1852485671}
   soundEffectsSource: {fileID: 791340033}
