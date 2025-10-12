@@ -55,7 +55,7 @@ public class DialogueSymbol : MonoBehaviour
             case Dialogue3DTheme.Mita:
                 break;
             case Dialogue3DTheme.Player:
-                JumpAniamtion_Player();
+                JumpAnimation_Player();
                 break;
             case Dialogue3DTheme.ChibiMita:
                 break;
@@ -67,12 +67,12 @@ public class DialogueSymbol : MonoBehaviour
         switch (dialogue3DTheme)
         {
             case Dialogue3DTheme.Default:
-                FadeOutAniamtion_Default();
+                FadeOutAnimation_Default();
                 break;
             case Dialogue3DTheme.Mita:
                 break;
             case Dialogue3DTheme.Player:
-                FadeOutAniamtion_Default();
+                FadeOutAnimation_Default();
                 break;
             case Dialogue3DTheme.ChibiMita:
                 break;
@@ -103,7 +103,7 @@ public class DialogueSymbol : MonoBehaviour
         symbolRigidbody.AddForceAtPosition(CommonTools.GetRandomVector3(), CommonTools.GetRandomVector3(), ForceMode.Impulse);
     }
 
-    private void JumpAniamtion_Player()
+    private void JumpAnimation_Player()
     {
         Vector3 force = transform.right * Random.Range(-0.5f, -0.25f) + transform.up * Random.Range(1.0f, 1.5f) + transform.forward * Random.Range(-0.25f, 0.25f);
         symbolRigidbody.AddForceAtPosition(force, CommonTools.GetRandomVector3(), ForceMode.Impulse);
@@ -111,7 +111,7 @@ public class DialogueSymbol : MonoBehaviour
     #endregion
 
     #region FadeOut Animation
-    private void FadeOutAniamtion_Default()
+    private void FadeOutAnimation_Default()
     {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(symbolTransform.DOScale(1.2f, 0.2f));
