@@ -190,6 +190,150 @@ public class AudioManager : MonoBehaviour
         }
     }
     
+    // Convenience methods for playing audio by name
+    public void PlaySFXbyName(string name)
+    {
+        PlayAudio(name, AudioSourceType.SoundEffects);
+    }
+    
+    public void PlayBGMbyName(string name)
+    {
+        PlayAudio(name, AudioSourceType.BackgroundMusic);
+    }
+    
+    public void PlayNarrationbyName(string name)
+    {
+        PlayAudio(name, AudioSourceType.Narration);
+    }
+    
+    public void PlayVoiceEffectbyName(string name)
+    {
+        PlayAudio(name, AudioSourceType.VoiceEffects);
+    }
+    
+    // Methods to stop audio by category
+    public void StopSFX()
+    {
+        if (soundEffectsSource != null)
+            soundEffectsSource.Stop();
+    }
+    
+    public void StopBGM()
+    {
+        if (backgroundMusicSource != null)
+            backgroundMusicSource.Stop();
+    }
+    
+    public void StopNarration()
+    {
+        if (narrationSource != null)
+            narrationSource.Stop();
+    }
+    
+    public void StopVoiceEffect()
+    {
+        if (voiceEffectsSource != null)
+            voiceEffectsSource.Stop();
+    }
+    
+    // Methods to pause audio by category
+    public void PauseSFX()
+    {
+        if (soundEffectsSource != null)
+            soundEffectsSource.Pause();
+    }
+    
+    public void PauseBGM()
+    {
+        if (backgroundMusicSource != null)
+            backgroundMusicSource.Pause();
+    }
+    
+    public void PauseNarration()
+    {
+        if (narrationSource != null)
+            narrationSource.Pause();
+    }
+    
+    public void PauseVoiceEffect()
+    {
+        if (voiceEffectsSource != null)
+            voiceEffectsSource.Pause();
+    }
+    
+    // Methods to resume audio by category
+    public void ResumeSFX()
+    {
+        if (soundEffectsSource != null)
+            soundEffectsSource.UnPause();
+    }
+    
+    public void ResumeBGM()
+    {
+        if (backgroundMusicSource != null)
+            backgroundMusicSource.UnPause();
+    }
+    
+    public void ResumeNarration()
+    {
+        if (narrationSource != null)
+            narrationSource.UnPause();
+    }
+    
+    public void ResumeVoiceEffect()
+    {
+        if (voiceEffectsSource != null)
+            voiceEffectsSource.UnPause();
+    }
+    
+    // Methods to check if audio is playing by category
+    public bool IsSFXPlaying()
+    {
+        return soundEffectsSource != null && soundEffectsSource.isPlaying;
+    }
+    
+    public bool IsBGMPlaying()
+    {
+        return backgroundMusicSource != null && backgroundMusicSource.isPlaying;
+    }
+    
+    public bool IsNarrationPlaying()
+    {
+        return narrationSource != null && narrationSource.isPlaying;
+    }
+    
+    public bool IsVoiceEffectPlaying()
+    {
+        return voiceEffectsSource != null && voiceEffectsSource.isPlaying;
+    }
+    
+    // Method to stop all audio
+    public void StopAllAudio()
+    {
+        StopSFX();
+        StopBGM();
+        StopNarration();
+        StopVoiceEffect();
+    }
+    
+    // Method to pause all audio
+    public void PauseAllAudio()
+    {
+        PauseSFX();
+        PauseBGM();
+        PauseNarration();
+        PauseVoiceEffect();
+    }
+    
+    // Method to resume all audio
+    public void ResumeAllAudio()
+    {
+        ResumeSFX();
+        ResumeBGM();
+        ResumeNarration();
+        ResumeVoiceEffect();
+    }
+    
 }
 
 public enum AudioSourceType
