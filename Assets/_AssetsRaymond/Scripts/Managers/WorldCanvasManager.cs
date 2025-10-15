@@ -29,8 +29,8 @@ public class WorldCanvasManager : MonoBehaviour
 
     [Header("Canvas WebViews (Left / Middle / Right)")]
     [SerializeField] private CanvasWebViewPrefab leftCanvasWebViewPrefab;
-    [SerializeField] private CanvasWebViewPrefab middleCanvasWebViewPrefab;
-    [SerializeField] private CanvasWebViewPrefab rightCanvasWebViewPrefab;
+    [SerializeField] private Image middleScreenImage;
+    [SerializeField] private Image rightScreenImage;
 
     public static WorldCanvasManager Instance { get; private set; }
 
@@ -69,6 +69,23 @@ public class WorldCanvasManager : MonoBehaviour
     private void BuildLookup()
     {
         labelToUrl.Clear();
+        labelToSprite.Clear();
+        // Build sprites for social media
+        for (int i = 0; i < socialMedia.Count; i++)
+        {
+            var entry = socialMedia[i];
+            if (string.IsNullOrEmpty(entry.label)) { continue; }
+            if (!labelToSprite.ContainsKey(entry.label) && entry.texture != null)
+            {
+                labelToSprite[entry.label] = Sprite.Create(
+                    entry.texture,
+                    new Rect(0, 0, entry.texture.width, entry.texture.height),
+                    new Vector2(0.5f, 0.5f)
+                );
+            }
+        }
+
+        // Build sprites and URL lookup for games
         for (int i = 0; i < games.Count; i++)
         {
             GameEntry entry = games[i];
@@ -122,8 +139,7 @@ public class WorldCanvasManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the middle web view's preview image and loads the mapped URL
-    /// for the specified game label (e.g., "CyberRun").
+    /// Middle shows Game texture; Left loads the game's URL.
     /// </summary>
     public void ShowGameOnMiddle(string label)
     {
@@ -133,55 +149,76 @@ public class WorldCanvasManager : MonoBehaviour
             return;
         }
 
-        // Update middle preview Image if present.
-        if (middleCanvasWebViewPrefab != null)
+        // Update middle screen image only.
+        if (middleScreenImage != null)
         {
-            var image = middleCanvasWebViewPrefab.GetComponent<Image>();
-            if (image != null)
+            if (!labelToSprite.TryGetValue(label, out var sprite))
             {
-                if (!labelToSprite.TryGetValue(label, out var sprite))
-                {
-                    // Attempt to build sprite cache on demand in case it wasn't built yet
-                    BuildLookup();
-                    labelToSprite.TryGetValue(label, out sprite);
-                }
-                if (sprite != null)
-                {
-                    image.sprite = sprite;
-                    image.preserveAspect = true;
-                }
-                else
-                {
-                    Debug.LogWarning($"No sprite/texture found for label: {label}");
-                }
+                // Attempt to build sprite cache on demand in case it wasn't built yet
+                BuildLookup();
+                labelToSprite.TryGetValue(label, out sprite);
             }
-
-            // Load URL into the Vuplex web view. If not initialized yet, defer until ready.
-            if (TryGetUrl(label, out var url))
+            if (sprite != null)
             {
-                if (middleCanvasWebViewPrefab.WebView != null)
-                {
-                    middleCanvasWebViewPrefab.WebView.LoadUrl(url);
-                }
-                else
-                {
-                    // Defer until the prefab finishes initializing.
-                    void Handler(object s, System.EventArgs e)
-                    {
-                        middleCanvasWebViewPrefab.Initialized -= Handler;
-                        middleCanvasWebViewPrefab.WebView.LoadUrl(url);
-                    }
-                    middleCanvasWebViewPrefab.Initialized += Handler;
-                }
+                middleScreenImage.sprite = sprite;
+                middleScreenImage.preserveAspect = true;
             }
             else
             {
-                Debug.LogWarning($"No URL mapped for label: {label}");
+                Debug.LogWarning($"No sprite/texture found for label: {label}");
             }
         }
         else
         {
-            Debug.LogWarning("Middle CanvasWebViewPrefab reference not assigned in WorldCanvasManager.");
+            Debug.LogWarning("Middle Screen Image reference not assigned in WorldCanvasManager.");
+        }
+
+        // Load URL on the LEFT webview only.
+        if (leftCanvasWebViewPrefab != null && TryGetUrl(label, out var leftUrl))
+        {
+            if (leftCanvasWebViewPrefab.WebView != null)
+            {
+                leftCanvasWebViewPrefab.WebView.LoadUrl(leftUrl);
+            }
+            else
+            {
+                void LeftHandler(object s, System.EventArgs e)
+                {
+                    leftCanvasWebViewPrefab.Initialized -= LeftHandler;
+                    leftCanvasWebViewPrefab.WebView.LoadUrl(leftUrl);
+                }
+                leftCanvasWebViewPrefab.Initialized += LeftHandler;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Right shows Social Media texture; no URL change here.
+    /// </summary>
+    public void ShowSocialOnRight(string label)
+    {
+        if (string.IsNullOrEmpty(label))
+        {
+            Debug.LogWarning("ShowSocialOnRight called with empty label");
+            return;
+        }
+
+        if (rightScreenImage == null)
+        {
+            Debug.LogWarning("Right Screen Image reference not assigned in WorldCanvasManager.");
+            return;
+        }
+
+        if (!labelToSprite.TryGetValue(label, out var sprite))
+        {
+            // Ensure cache is up to date; then try again.
+            BuildLookup();
+            labelToSprite.TryGetValue(label, out sprite);
+        }
+        if (sprite != null)
+        {
+            rightScreenImage.sprite = sprite;
+            rightScreenImage.preserveAspect = true;
         }
     }
 }

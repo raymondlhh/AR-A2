@@ -5,6 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ButtonClick : MonoBehaviour
 {
+    public enum ButtonCategory
+    {
+        None,
+        Game,
+        Social
+    }
     [SerializeField]
     private Camera raycastCamera;
 
@@ -16,6 +22,9 @@ public class ButtonClick : MonoBehaviour
 
 	[SerializeField]
 	private string worldCanvasGameLabel = ""; // e.g., "CyberRun"
+
+	[SerializeField]
+	private ButtonCategory category = ButtonCategory.None;
 
 	[SerializeField]
 	private LayerMask hittableLayers = ~0; // All layers by default
@@ -106,7 +115,14 @@ public class ButtonClick : MonoBehaviour
 
 		if (!string.IsNullOrEmpty(worldCanvasGameLabel) && WorldCanvasManager.Instance != null)
 		{
-			WorldCanvasManager.Instance.ShowGameOnMiddle(worldCanvasGameLabel);
+			if (category == ButtonCategory.Game)
+			{
+				WorldCanvasManager.Instance.ShowGameOnMiddle(worldCanvasGameLabel);
+			}
+			else if (category == ButtonCategory.Social)
+			{
+				WorldCanvasManager.Instance.ShowSocialOnRight(worldCanvasGameLabel);
+			}
 		}
 	}
 }
