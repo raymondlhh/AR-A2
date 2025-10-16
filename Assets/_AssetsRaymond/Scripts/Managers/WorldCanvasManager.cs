@@ -161,7 +161,8 @@ public class WorldCanvasManager : MonoBehaviour
             if (sprite != null)
             {
                 middleScreenImage.sprite = sprite;
-                middleScreenImage.preserveAspect = true;
+                // Keep the original preserveAspect setting to maintain panel size
+                // middleScreenImage.preserveAspect = true; // Commented out to prevent size changes
             }
             else
             {
@@ -218,7 +219,8 @@ public class WorldCanvasManager : MonoBehaviour
         if (sprite != null)
         {
             rightScreenImage.sprite = sprite;
-            rightScreenImage.preserveAspect = true;
+            // Keep the original preserveAspect setting to maintain panel size
+            // rightScreenImage.preserveAspect = true; // Commented out to prevent size changes
         }
     }
 }
