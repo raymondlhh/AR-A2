@@ -191,7 +191,7 @@ public class AudioManager : MonoBehaviour
     }
     
     // Convenience methods for playing audio by name
-    public void PlaySFXbyName(string name)
+    public void PlaySFXByName(string name)
     {
         PlayAudio(name, AudioSourceType.SoundEffects);
     }

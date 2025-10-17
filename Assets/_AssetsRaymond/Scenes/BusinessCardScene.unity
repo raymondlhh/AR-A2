@@ -1004,6 +1004,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4867082541060014074, guid: 6700140510392394eb6ca3f42590e32f,
+        type: 3}
+      propertyPath: soundEffectsFiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867082541060014074, guid: 6700140510392394eb6ca3f42590e32f,
+        type: 3}
+      propertyPath: soundEffectsFiles.Array.data[0].name
+      value: Button Pressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867082541060014074, guid: 6700140510392394eb6ca3f42590e32f,
+        type: 3}
+      propertyPath: soundEffectsFiles.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867082541060014074, guid: 6700140510392394eb6ca3f42590e32f,
+        type: 3}
+      propertyPath: soundEffectsFiles.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d5073d3e0f516464080b9a3c334cd337, type: 3}
     - target: {fileID: 7913032668848141638, guid: 6700140510392394eb6ca3f42590e32f,
         type: 3}
       propertyPath: m_Name

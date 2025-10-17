@@ -32,6 +32,13 @@ public class ButtonClick : MonoBehaviour
 	[SerializeField]
 	private bool alsoTryMainCamera = true;
 
+	[Header("Audio Settings")]
+	[SerializeField]
+	private string soundEffectName = "Button Pressed"; // Name of the sound effect to play
+
+	[SerializeField]
+	private AudioManager audioManager; // Reference to AudioManager
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +54,12 @@ public class ButtonClick : MonoBehaviour
 			{
 				animator = GetComponentInChildren<Animator>();
 			}
+		}
+
+		// Initialize AudioManager reference if not assigned
+		if (audioManager == null)
+		{
+			audioManager = FindObjectOfType<AudioManager>();
 		}
     }
 
@@ -108,6 +121,9 @@ public class ButtonClick : MonoBehaviour
 
 	private void OnButtonPressed()
 	{
+		// Play sound effect
+		PlaySoundEffect();
+
 		if (animator != null && !string.IsNullOrEmpty(triggerParameterName))
 		{
 			animator.SetTrigger(triggerParameterName);
@@ -123,6 +139,22 @@ public class ButtonClick : MonoBehaviour
 			{
 				WorldCanvasManager.Instance.ShowSocialOnRight(worldCanvasGameLabel);
 			}
+		}
+	}
+
+	private void PlaySoundEffect()
+	{
+		if (string.IsNullOrEmpty(soundEffectName))
+			return;
+
+		// Use AudioManager to play sound effect
+		if (audioManager != null)
+		{
+			audioManager.PlaySFXByName(soundEffectName);
+		}
+		else
+		{
+			Debug.LogWarning($"ButtonClick: AudioManager not found. Cannot play sound effect '{soundEffectName}'. Please assign an AudioManager or ensure one exists in the scene.");
 		}
 	}
 }
