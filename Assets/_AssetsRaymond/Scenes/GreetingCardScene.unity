@@ -249,6 +249,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3947044472295885023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235875900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235875902}
+  - component: {fileID: 235875901}
+  m_Layer: 0
+  m_Name: LocationPinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235875901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235875900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0216fb0d7a736b46a2536b14628c280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationPinsParent: {fileID: 2088619325}
+  statusUIParent: {fileID: 3094971742095893169}
+  enableDebugLogs: 1
+--- !u!4 &235875902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235875900}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07133272, y: 0.028030539, z: 0.26469356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246301326
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 246301326}
   serializedVersion: 2
   m_LocalRotation: {x: 0.41760176, y: 0.0048206868, z: -0.0022344955, w: 0.9086147}
-  m_LocalPosition: {x: -0, y: 18.3, z: -1.7}
+  m_LocalPosition: {x: 0.01, y: 0.58, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1813,7 +1860,6 @@ GameObject:
   - component: {fileID: 1832604599}
   - component: {fileID: 1832604598}
   - component: {fileID: 1832604601}
-  - component: {fileID: 1832604602}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -1828,7 +1874,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832604596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
@@ -1920,7 +1966,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832604596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
@@ -1975,18 +2021,6 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1832604599}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
---- !u!114 &1832604602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832604596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312b901702d34304d9186706b63a7ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1989392067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2157,19 +2191,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1347758164}
+  - {fileID: 335962787}
   - {fileID: 1136113408}
+  - {fileID: 501088647}
+  - {fileID: 1685341724}
+  - {fileID: 620624484}
+  - {fileID: 235258958}
   - {fileID: 1242494881}
   - {fileID: 1779003649}
-  - {fileID: 501088647}
-  - {fileID: 938985703}
-  - {fileID: 235258958}
+  - {fileID: 1347758164}
   - {fileID: 180331503}
-  - {fileID: 620624484}
-  - {fileID: 1685341724}
-  - {fileID: 335962787}
-  - {fileID: 892006045}
+  - {fileID: 938985703}
   - {fileID: 1279361296}
+  - {fileID: 892006045}
   - {fileID: 4373080346198299258}
   - {fileID: 1108295613767236663}
   - {fileID: 4930482294299212081}
@@ -3338,18 +3372,18 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 680161623953214848}
+  - {fileID: 5074729142884409927}
+  - {fileID: 4252228837132705733}
   - {fileID: 1144619982}
   - {fileID: 35540538}
-  - {fileID: 2116121760371194476}
   - {fileID: 1524228397771082602}
-  - {fileID: 4163363817085895630}
-  - {fileID: 5078509322049831773}
-  - {fileID: 4252228837132705733}
-  - {fileID: 5074729142884409927}
   - {fileID: 4690522046606289192}
+  - {fileID: 4163363817085895630}
   - {fileID: 649117200875354298}
-  - {fileID: 7982078675491919512}
+  - {fileID: 2116121760371194476}
+  - {fileID: 5078509322049831773}
   - {fileID: 4319757679493300584}
+  - {fileID: 7982078675491919512}
   - {fileID: 1903815022994873742}
   - {fileID: 468066921}
   - {fileID: 2077564736}
@@ -4117,7 +4151,7 @@ PrefabInstance:
     - target: {fileID: 3461373700526446130, guid: dc65ce4b4518aa143b4c8e32f14108a3,
         type: 3}
       propertyPath: m_Name
-      value: StatusUI_Penang
+      value: StatusUI_Pulau Pinang
       objectReference: {fileID: 0}
     - target: {fileID: 3461373700526446130, guid: dc65ce4b4518aa143b4c8e32f14108a3,
         type: 3}
@@ -4959,7 +4993,7 @@ PrefabInstance:
     - target: {fileID: 5758506055346104098, guid: bea7bcd4151c0804c93c6318d8c6171d,
         type: 3}
       propertyPath: m_Name
-      value: LocationPin_Terrengganu
+      value: LocationPin_Terengganu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5697,3 +5731,4 @@ SceneRoots:
   - {fileID: 1711352471}
   - {fileID: 1178950270}
   - {fileID: 8187638226724388001}
+  - {fileID: 235875902}
