@@ -280,6 +280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationPinsParent: {fileID: 2088619325}
   statusUIParent: {fileID: 3094971742095893169}
+  enableAutoHide: 1
+  autoHideDelay: 5
   enableDebugLogs: 1
 --- !u!4 &235875902
 Transform:
@@ -1544,6 +1546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1388945231}
+  - component: {fileID: 1388945232}
   m_Layer: 0
   m_Name: GreetingCard
   m_TagString: Untagged
@@ -1568,6 +1571,27 @@ Transform:
   - {fileID: 374153809}
   m_Father: {fileID: 1832604600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1388945232
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388945230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74253b4382c7413439714c46906ec9f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1426721769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99d3cb30b7f21314eb7cfea35793ca84,
@@ -1874,7 +1898,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832604596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
@@ -1966,7 +1990,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832604596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
@@ -3004,22 +3028,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3094971742095893169}
     m_Modifications:
-    - target: {fileID: 23137691174324990, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: efdfd2e41ec593041af50ce62242ceb1,
-        type: 3}
-    - target: {fileID: 913337608781417549, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_text
-      value: Perdana Putra
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380591762588982255, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_text
-      value: Seri Wawasan Bridge
-      objectReference: {fileID: 0}
     - target: {fileID: 2478875008378375872, guid: 215288eaa59941645a11ccaebddcb8c8,
         type: 3}
       propertyPath: m_Name
@@ -3029,11 +3037,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339216560259298102, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_text
-      value: Putra Mosque
       objectReference: {fileID: 0}
     - target: {fileID: 5703709387337555680, guid: 215288eaa59941645a11ccaebddcb8c8,
         type: 3}
@@ -3134,34 +3137,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947266737521511033, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_text
-      value: Putrajaya Lake
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979774041294004849, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3e1d8e9c2bc751048887c48c95cbc3ed,
-        type: 3}
-    - target: {fileID: 7933925160358562594, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 67461e21cdf4a484cacc5c1dd9ad2542,
-        type: 3}
-    - target: {fileID: 8666509007484208492, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a29c9e09eccc8c74faee0d2e37d21346,
-        type: 3}
-    - target: {fileID: 9039679639438541237, guid: 215288eaa59941645a11ccaebddcb8c8,
-        type: 3}
-      propertyPath: m_text
-      value: Putrajaya
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

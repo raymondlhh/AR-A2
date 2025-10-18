@@ -9,6 +9,10 @@ public class LocationPinManager : MonoBehaviour
     [SerializeField] private Transform locationPinsParent;
     [SerializeField] private Transform statusUIParent;
     
+    [Header("Auto-Hide Settings")]
+    [SerializeField] private bool enableAutoHide = true;
+    [SerializeField] private float autoHideDelay = 10f;
+    
     [Header("Debug")]
     [SerializeField] private bool enableDebugLogs = true;
     
@@ -19,6 +23,10 @@ public class LocationPinManager : MonoBehaviour
     // Currently active status UI
     private string currentActiveStatusUI = "";
     
+    // Auto-hide timer
+    private float autoHideTimer = 0f;
+    private bool isAutoHideActive = false;
+    
     void Start()
     {
         InitializeLocationPinsAndStatusUIs();
@@ -27,6 +35,7 @@ public class LocationPinManager : MonoBehaviour
     void Update()
     {
         HandleTouchInput();
+        HandleAutoHide();
     }
     
     /// <summary>
@@ -98,6 +107,28 @@ public class LocationPinManager : MonoBehaviour
     }
     
     /// <summary>
+    /// Handle auto-hide timer
+    /// </summary>
+    private void HandleAutoHide()
+    {
+        if (!enableAutoHide || !isAutoHideActive)
+            return;
+        
+        // Count down the timer
+        autoHideTimer -= Time.deltaTime;
+        
+        // Check if timer has expired
+        if (autoHideTimer <= 0f)
+        {
+            HideAllStatusUIs();
+            isAutoHideActive = false;
+            
+            if (enableDebugLogs)
+                Debug.Log("LocationPinManager: Auto-hide triggered - all status UIs hidden");
+        }
+    }
+    
+    /// <summary>
     /// Handle touch input for mobile devices
     /// </summary>
     private void HandleTouchInput()
@@ -157,6 +188,36 @@ public class LocationPinManager : MonoBehaviour
         
         // Show the corresponding status UI
         ShowStatusUI(statusUIName);
+        
+        // Start auto-hide timer if enabled
+        if (enableAutoHide)
+        {
+            StartAutoHideTimer();
+        }
+    }
+    
+    /// <summary>
+    /// Start the auto-hide timer
+    /// </summary>
+    private void StartAutoHideTimer()
+    {
+        autoHideTimer = autoHideDelay;
+        isAutoHideActive = true;
+        
+        if (enableDebugLogs)
+            Debug.Log($"LocationPinManager: Auto-hide timer started - {autoHideDelay} seconds");
+    }
+    
+    /// <summary>
+    /// Stop the auto-hide timer
+    /// </summary>
+    private void StopAutoHideTimer()
+    {
+        isAutoHideActive = false;
+        autoHideTimer = 0f;
+        
+        if (enableDebugLogs)
+            Debug.Log("LocationPinManager: Auto-hide timer stopped");
     }
     
     /// <summary>
@@ -194,6 +255,9 @@ public class LocationPinManager : MonoBehaviour
         
         currentActiveStatusUI = "";
         
+        // Stop auto-hide timer when hiding all UIs
+        StopAutoHideTimer();
+        
         if (enableDebugLogs)
             Debug.Log("LocationPinManager: All status UIs hidden");
     }
@@ -227,5 +291,21 @@ public class LocationPinManager : MonoBehaviour
         {
             ShowStatusUI(statusUIName);
         }
+    }
+    
+    /// <summary>
+    /// Get the remaining auto-hide time
+    /// </summary>
+    public float GetRemainingAutoHideTime()
+    {
+        return isAutoHideActive ? autoHideTimer : 0f;
+    }
+    
+    /// <summary>
+    /// Check if auto-hide is currently active
+    /// </summary>
+    public bool IsAutoHideActive()
+    {
+        return isAutoHideActive;
     }
 }
