@@ -13,6 +13,9 @@ public class LocationPinManager : MonoBehaviour
     [SerializeField] private bool enableAutoHide = true;
     [SerializeField] private float autoHideDelay = 10f;
     
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager;
+    
     [Header("Debug")]
     [SerializeField] private bool enableDebugLogs = true;
     
@@ -23,13 +26,14 @@ public class LocationPinManager : MonoBehaviour
     // Currently active status UI
     private string currentActiveStatusUI = "";
     
-    // Auto-hide timer
+    // Auto-hide timer 
     private float autoHideTimer = 0f;
     private bool isAutoHideActive = false;
     
     void Start()
     {
         InitializeLocationPinsAndStatusUIs();
+        InitializeAudioManager();
     }
     
     void Update()
@@ -103,6 +107,27 @@ public class LocationPinManager : MonoBehaviour
         if (enableDebugLogs)
         {
             Debug.Log($"LocationPinManager: Initialized with {locationPins.Count} location pins and {statusUIs.Count} status UIs");
+        }
+    }
+    
+    /// <summary>
+    /// Initialize the AudioManager reference
+    /// </summary>
+    private void InitializeAudioManager()
+    {
+        // Find AudioManager if not assigned
+        if (audioManager == null)
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
+        
+        if (audioManager == null)
+        {
+            Debug.LogWarning("LocationPinManager: AudioManager not found! Sound effects will not play.");
+        }
+        else if (enableDebugLogs)
+        {
+            Debug.Log("LocationPinManager: AudioManager found and initialized");
         }
     }
     
@@ -182,6 +207,9 @@ public class LocationPinManager : MonoBehaviour
     {
         if (enableDebugLogs)
             Debug.Log($"LocationPinManager: Location pin touched - {locationPinName}");
+        
+        // Play button click sound effect
+        PlayButtonClickSound();
         
         // Convert LocationPin name to StatusUI name
         string statusUIName = locationPinName.Replace("LocationPin_", "StatusUI_");
@@ -307,5 +335,23 @@ public class LocationPinManager : MonoBehaviour
     public bool IsAutoHideActive()
     {
         return isAutoHideActive;
+    }
+    
+    /// <summary>
+    /// Play the button click sound effect
+    /// </summary>
+    private void PlayButtonClickSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlaySFXByName("Button Click");
+            
+            if (enableDebugLogs)
+                Debug.Log("LocationPinManager: Playing button click sound effect");
+        }
+        else
+        {
+            Debug.LogWarning("LocationPinManager: Cannot play button click sound - AudioManager not found!");
+        }
     }
 }
