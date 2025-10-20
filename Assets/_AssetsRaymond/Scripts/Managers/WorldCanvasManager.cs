@@ -191,6 +191,50 @@ public class WorldCanvasManager : MonoBehaviour
                 leftCanvasWebViewPrefab.Initialized += LeftHandler;
             }
         }
+
+        // Handle game object visibility based on the game label
+        HandleGameObjectVisibility(label);
+    }
+
+    /// <summary>
+    /// Handle showing/hiding game objects based on the game label
+    /// </summary>
+    private void HandleGameObjectVisibility(string label)
+    {
+        if (GameObjectVisibilityManager.Instance == null)
+        {
+            Debug.LogWarning("GameObjectVisibilityManager not found. Game object visibility will not be controlled.");
+            return;
+        }
+
+        // Map game labels to group names
+        string groupName = GetGroupNameFromLabel(label);
+        if (!string.IsNullOrEmpty(groupName))
+        {
+            GameObjectVisibilityManager.Instance.ShowGroup(groupName);
+        }
+    }
+
+    /// <summary>
+    /// Map game labels to their corresponding group names
+    /// </summary>
+    private string GetGroupNameFromLabel(string label)
+    {
+        switch (label.ToLower())
+        {
+            case "merlin's curse":
+            case "merlins curse":
+            case "merlin curse":
+                return "MerlinCurse";
+            case "the debuggers":
+            case "debuggers":
+                return "TheDebuggers";
+            case "cyber run":
+            case "cyberrun":
+                return "CyberRun";
+            default:
+                return label; // Return the label as-is if no mapping found
+        }
     }
 
     /// <summary>

@@ -26,6 +26,10 @@ public class ButtonClick : MonoBehaviour
 	[SerializeField]
 	private ButtonCategory category = ButtonCategory.None;
 
+	[Header("Game Object Visibility")]
+	[SerializeField]
+	private string gameObjectGroupName = ""; // e.g., "MerlinCurse", "TheDebuggers", "CyberRun"
+
 	[SerializeField]
 	private LayerMask hittableLayers = ~0; // All layers by default
 
@@ -139,6 +143,12 @@ public class ButtonClick : MonoBehaviour
 			{
 				WorldCanvasManager.Instance.ShowSocialOnRight(worldCanvasGameLabel);
 			}
+		}
+
+		// Handle game object visibility for game category buttons
+		if (category == ButtonCategory.Game && !string.IsNullOrEmpty(gameObjectGroupName) && GameObjectVisibilityManager.Instance != null)
+		{
+			GameObjectVisibilityManager.Instance.ShowGroup(gameObjectGroupName);
 		}
 	}
 
