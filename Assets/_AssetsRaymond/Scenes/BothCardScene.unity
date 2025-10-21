@@ -122,56 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &235875900
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 235875902}
-  - component: {fileID: 235875901}
-  m_Layer: 0
-  m_Name: LocationPinManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &235875901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235875900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0216fb0d7a736b46a2536b14628c280, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locationPinsParent: {fileID: 2088619325}
-  statusUIParent: {fileID: 3094971742095893169}
-  enableAutoHide: 1
-  autoHideDelay: 5
-  audioManager: {fileID: 8187638226724388002}
-  enableDebugLogs: 1
---- !u!4 &235875902
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235875900}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07133272, y: 0.028030539, z: 0.26469356}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246301326
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,41 +414,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+    - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 8187638226724388002}
+    - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: raycastCamera
+      value: 
+      objectReference: {fileID: 246301331}
+    - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 8187638226724388002}
+    - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: raycastCamera
+      value: 
+      objectReference: {fileID: 246301331}
+    - target: {fileID: 910514297957304277, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: mHiddenRoot
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+    - target: {fileID: 910514297957304277, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: mMeshFilter
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+    - target: {fileID: 910514297957304277, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: mMeshRenderer
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 8187638226724388002}
-    - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: raycastCamera
-      value: 
-      objectReference: {fileID: 246301331}
-    - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 8187638226724388002}
-    - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: raycastCamera
-      value: 
-      objectReference: {fileID: 246301331}
     - target: {fileID: 1261589802859788177, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -509,11 +459,6 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 1767335621606529479, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2165552876279507539, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -524,6 +469,11 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
+    - target: {fileID: 3751668797409089597, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3890272449795543095, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -534,40 +484,15 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mHeight
-      value: 0.571429
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mPreview
-      value: 
-      objectReference: {fileID: 740966957}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mAspectRatio
-      value: 0.571429
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mDataSetPath
-      value: Vuforia/AR-A2.xml
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mTrackableName
-      value: Business-Card-2
-      objectReference: {fileID: 0}
     - target: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: m_Name
       value: BusinessCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993556717084101747, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6341367057237089843, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
@@ -629,88 +554,31 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    m_RemovedComponents:
-    - {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c, type: 3}
+    - target: {fileID: 7556370043470106287, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061735171183603904, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mHiddenRoot
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061735171183603904, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mMeshFilter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061735171183603904, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mMeshRenderer
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 740966953}
-    - targetCorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 740966957}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12425ce9d4172b5438a5c89038005f7c, type: 3}
---- !u!1 &628424614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7028346331781330368, guid: 12425ce9d4172b5438a5c89038005f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 628424613}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &628424615 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2273423539960806889, guid: 12425ce9d4172b5438a5c89038005f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 628424613}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &740966945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 628424613}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &740966949 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 628424613}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740966945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &740966953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740966945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 740966949}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Business-Card-2
-  mDatasetName: Vuforia/AR-A2.xml
-  mCastedBehaviour: {fileID: 740966949}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &740966957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740966945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 740966949}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Business-Card-2
-  mDatasetName: Vuforia/AR-A2.xml
-  mCastedBehaviour: {fileID: 740966949}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!1 &889356029
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,67 +789,6 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
---- !u!1 &1220739142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1220739144}
-  - component: {fileID: 1220739143}
-  m_Layer: 0
-  m_Name: GameObjectVisibilityManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1220739143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220739142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f839e5fa6cb75074383b2fa81b98034e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectGroups:
-  - groupName: Merlin Curse
-    gameObjects:
-    - {fileID: 1230827974}
-  - groupName: The Debuggers
-    gameObjects:
-    - {fileID: 628424615}
-  - groupName: Cyber Run
-    gameObjects:
-    - {fileID: 628424614}
-  initialGroupName: Merlin Curse
---- !u!4 &1220739144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220739142}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29818082, y: 0.39342842, z: 0.009794458}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1230827974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6563585214531111905, guid: 12425ce9d4172b5438a5c89038005f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 628424613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287677892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,18 +1020,6 @@ Transform:
   - {fileID: 1287677893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2088619325 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8492675324879083567, guid: c371219437fe0554e9d4cfe561c53bfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 7026943601897546850}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3094971742095893169 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1248603696499201118, guid: c371219437fe0554e9d4cfe561c53bfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 7026943601897546850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7026943601897546850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,31 +1028,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mHeight
-      value: 0.666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mAspectRatio
-      value: 0.666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mDataSetPath
-      value: Vuforia/AR-A2.xml
-      objectReference: {fileID: 0}
-    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mTrackableName
-      value: Malaysia-Day-2
-      objectReference: {fileID: 0}
     - target: {fileID: 1212321031723057809, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 246301331}
+    - target: {fileID: 2148154903997135537, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5184153997639194371, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: mHiddenRoot
@@ -1278,11 +1058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreetingCard
       objectReference: {fileID: 0}
-    - target: {fileID: 7618791815275695470, guid: c371219437fe0554e9d4cfe561c53bfc,
+    - target: {fileID: 8223908743559313484, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 8187638226724388002}
     - target: {fileID: 8346875508858898593, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1479,5 +1259,3 @@ SceneRoots:
   - {fileID: 1711352471}
   - {fileID: 1178950270}
   - {fileID: 8187638226724388001}
-  - {fileID: 235875902}
-  - {fileID: 1220739144}
