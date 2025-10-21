@@ -13,6 +13,9 @@ public class GameObjectVisibilityManager : MonoBehaviour
     [Header("Game Object Groups")]
     [SerializeField] private List<GameObjectGroup> gameObjectGroups = new List<GameObjectGroup>();
 
+    [Header("Initial Visibility")]
+    [SerializeField] private string initialGroupName = "MerlinCurse"; // Show this group on start if set
+
     public static GameObjectVisibilityManager Instance { get; private set; }
 
     private void Awake()
@@ -27,8 +30,15 @@ public class GameObjectVisibilityManager : MonoBehaviour
 
     private void Start()
     {
-        // Initialize all groups to be hidden by default
-        HideAllGroups();
+        // Initialize visibility based on initialGroupName
+        if (!string.IsNullOrEmpty(initialGroupName))
+        {
+            ShowGroup(initialGroupName);
+        }
+        else
+        {
+            HideAllGroups();
+        }
     }
 
     /// <summary>

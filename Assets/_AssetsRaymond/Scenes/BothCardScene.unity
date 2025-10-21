@@ -331,8 +331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246301326}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.41760176, y: 0.0048206868, z: -0.0022344955, w: 0.9086147}
-  m_LocalPosition: {x: 0.01, y: 1.196, z: -0.724}
+  m_LocalRotation: {x: -0.30581462, y: -0.00180938, z: 0.0045340606, w: -0.95207864}
+  m_LocalPosition: {x: 0.7770083, y: 1.1921014, z: -1.3401296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -464,6 +464,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mHiddenRoot
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mMeshFilter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mMeshRenderer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -474,11 +489,6 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 777594553706483339, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: gameObjectGroupName
-      value: The Debuggers
-      objectReference: {fileID: 0}
     - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -489,11 +499,6 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 797615231709605949, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: gameObjectGroupName
-      value: Merlin Curse
-      objectReference: {fileID: 0}
     - target: {fileID: 1261589802859788177, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -504,6 +509,11 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
+    - target: {fileID: 1767335621606529479, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2165552876279507539, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: audioManager
@@ -524,6 +534,36 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mHeight
+      value: 0.571429
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mPreview
+      value: 
+      objectReference: {fileID: 740966957}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mAspectRatio
+      value: 0.571429
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mDataSetPath
+      value: Vuforia/AR-A2.xml
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      propertyPath: mTrackableName
+      value: Business-Card-2
+      objectReference: {fileID: 0}
     - target: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: m_Name
@@ -532,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 6341367057237089843, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: 1.387
       objectReference: {fileID: 0}
     - target: {fileID: 6341367057237089843, guid: 12425ce9d4172b5438a5c89038005f7c,
         type: 3}
@@ -589,30 +629,19 @@ PrefabInstance:
       propertyPath: raycastCamera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 7322274664468785578, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: gameObjectGroupName
-      value: Cyber Run
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797861386926283922, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mHiddenRoot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797861386926283922, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mMeshFilter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797861386926283922, guid: 12425ce9d4172b5438a5c89038005f7c,
-        type: 3}
-      propertyPath: mMeshRenderer
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 156048122431763347, guid: 12425ce9d4172b5438a5c89038005f7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740966953}
+    - targetCorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740966957}
   m_SourcePrefab: {fileID: 100100000, guid: 12425ce9d4172b5438a5c89038005f7c, type: 3}
 --- !u!1 &628424614 stripped
 GameObject:
@@ -626,6 +655,62 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 628424613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &740966945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4615558476650793971, guid: 12425ce9d4172b5438a5c89038005f7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 628424613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &740966949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4239891967353967677, guid: 12425ce9d4172b5438a5c89038005f7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 628424613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740966945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &740966953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740966945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 740966949}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Business-Card-2
+  mDatasetName: Vuforia/AR-A2.xml
+  mCastedBehaviour: {fileID: 740966949}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &740966957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740966945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 740966949}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Business-Card-2
+  mDatasetName: Vuforia/AR-A2.xml
+  mCastedBehaviour: {fileID: 740966949}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &889356029
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +960,7 @@ MonoBehaviour:
   - groupName: Cyber Run
     gameObjects:
     - {fileID: 628424614}
+  initialGroupName: Merlin Curse
 --- !u!4 &1220739144
 Transform:
   m_ObjectHideFlags: 0
@@ -1147,21 +1233,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: mHeight
+      value: 0.666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: mAspectRatio
+      value: 0.666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: mDataSetPath
+      value: Vuforia/AR-A2.xml
+      objectReference: {fileID: 0}
+    - target: {fileID: 859853723815493193, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: mTrackableName
+      value: Malaysia-Day-2
+      objectReference: {fileID: 0}
     - target: {fileID: 1212321031723057809, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 246301331}
-    - target: {fileID: 3836057500885158847, guid: c371219437fe0554e9d4cfe561c53bfc,
+    - target: {fileID: 5184153997639194371, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
-      propertyPath: OnTargetLost.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: mHiddenRoot
       value: 
-      objectReference: {fileID: 8187638226724388002}
-    - target: {fileID: 3836057500885158847, guid: c371219437fe0554e9d4cfe561c53bfc,
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184153997639194371, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
-      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: mMeshFilter
       value: 
-      objectReference: {fileID: 8187638226724388002}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184153997639194371, guid: c371219437fe0554e9d4cfe561c53bfc,
+        type: 3}
+      propertyPath: mMeshRenderer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7618791815275695470, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: m_Name
@@ -1170,7 +1281,7 @@ PrefabInstance:
     - target: {fileID: 7618791815275695470, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8346875508858898593, guid: c371219437fe0554e9d4cfe561c53bfc,
         type: 3}
@@ -1221,21 +1332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911232743865828413, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mHiddenRoot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911232743865828413, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mMeshFilter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911232743865828413, guid: c371219437fe0554e9d4cfe561c53bfc,
-        type: 3}
-      propertyPath: mMeshRenderer
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
